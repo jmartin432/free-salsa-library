@@ -82,7 +82,7 @@ header {
 
 h1 {
     font-size: 4rem;
-    color: #D175CB;
+    color: #000;
     font-family: Oswald;
     font-weight: 700;
     /* text-shadow: 2px 2px 5px #D175CB88; */
@@ -91,7 +91,7 @@ h1 {
 
 h2 {
     font-size: 3rem;
-    color: #75CBD1;
+    color: #000;
     font-family: Poppins;
     font-weight: 400;
     margin: 0;
@@ -103,25 +103,25 @@ nav {
     text-align: center;
     margin: auto;
     padding: 1rem 0;
-    border-top: 1px solid #CBD175
+    border-top: 1px solid #000
 }
 
 nav a {
-    color: #D175CB;
+    color: #000;
     text-decoration: none;
     display: inline-block;
     padding: 0 1rem;
-    border-left: 1px solid #CBD175;
+    border-left: 1px solid #000;
     font-family: "Open Sans";
     font-weight: 500;
 }
 
 nav a:hover {
-    background-color: #777;
+    background-color: #555;
 }
 
 nav a.router-link-exact-active {
-    color: #D175CB88;
+    color: #000;
     cursor: default;
     text-decoration: none;
 }
@@ -139,9 +139,9 @@ footer {
     font-family: "Poppins", sans-serif;
     width: 100%;
     padding: 2rem 0;
-    color: #D175CB;
+    color: #000;
     transition-duration: .75s;
-    border-top: 1px solid #CBD175;
+    border-top: 1px solid #000;
     margin-top: 2rem;
 }
 
