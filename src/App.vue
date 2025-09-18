@@ -10,7 +10,7 @@ import { RouterLink, RouterView } from 'vue-router'
             </div>
             <div class="title-text-container">
                 <h1>Free Salsa Library</h1>
-                <h2>Dance! Dance! Dance!test</h2>
+                <h2>Dance! Dance! Dance!</h2>
             </div>
         </div>
             <nav>
