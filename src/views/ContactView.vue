@@ -127,7 +127,7 @@
                     const data = await response.json();
                     console.log('RESPONSE: ', data)
                     this.submitting = false
-                    if (data.statusCode === 200) {
+                    if (data.status === 200) {
                         console.log('SUCCESS');
                         this.submitStatus = 'success';
                     } else {
