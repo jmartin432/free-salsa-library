@@ -1,5 +1,7 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+    import { RouterLink, RouterView } from 'vue-router';
+    //import Header from './components/Header.vue';
+    import Footer from './components/Footer.vue';
 </script>
 
 <template>
@@ -22,35 +24,10 @@ import { RouterLink, RouterView } from 'vue-router'
 
     <RouterView class="view-container"/>
 
-    <footer>
-        <!-- <div id="footer-social-icons">
-            <div class="social-icon-container">
-                <a href="https://github.com/jmartin432/fabric-designer" target="_blamk">
-                    <img class="social-icon" src="@/assets/images/github_mark.svg" alt="GitHub Logo" />
-                </a>
-            </div>
-            <div  class="social-icon-container">
-                <a href="https://www.linkedin.com/in/justinleemartin" target="_blamk">
-                    <img class="social-icon" src="@/assets/images/linkedin_mark.svg" alt="Linkedin Logo" />
-                </a>
-            </div>
-            <div  class="social-icon-container">
-                <a href="https://www.instagram.com/backandforthdesigns/" target="_blank">
-                    <img class="social-icon" src="@/assets/images/instagram_mark.svg" alt="Instagram Logo" />
-                </a>
-            </div>
-        </div> -->
-        <div id="footer-message">
-            <!-- <img src = "assets/images/bnf.svg" alt="Back and Forth Logo"/> -->
-            <span id="footer-emoji-left">💃</span>
-            <span id="footer-text"> Dance! Dance! Dance! </span>
-            <span id="footer-emoji-right">🕺</span>
-            <!-- <img src = "assets/images/bnf.svg" alt="Back and Forth Logo"/> -->
-        </div>
-    </footer>
+    <Footer></Footer>
 </template>
 
-<style scoped>
+<style>
 
 header {
     max-height: 100vh;
@@ -134,77 +111,84 @@ nav a:first-of-type {
     border: 0;
 }
 
-footer {
-    font-size: 1rem;
-    font-family: "Poppins", sans-serif;
-    width: 100%;
-    padding: 2rem 0;
+.view-container {
+    flex-grow: 1;
+    padding: 2rem;
+    /* border: 1px solid red; */
+}
+
+h3 {
+    padding: 1rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-family: Poppins;
+    font-size: 2rem;
     color: #000;
-    transition-duration: .75s;
-    border-top: 1px solid #000;
-    margin-top: 2rem;
+}
+
+p {
+    /* font-family: Alegreya; */
+    padding: .75rem;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+summary {
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+details p {
+    text-align: left;
+}
+
+details ul {
+    list-style-type: none;
+    padding: 2rem;
+}
+details li {
+    padding: .5rem;
+}
+
+a {
+    color: #000;
+    font-size: 1.25rem;
+}
+
+
+
+/* footer {
+font-size: 1rem;
+font-family: "Poppins", sans-serif;
+width: 100%;
+padding: 2rem 0;
+color: #000;
+transition-duration: .75s;
+border-top: 1px solid #000;
+margin-top: 2rem;
 }
 
 #footer-message{
-    text-align: center;
+text-align: center;
 }
 
 #footer-social-icons {
-    display: flex;
-    justify-content: center;
+display: flex;
+justify-content: center;
 }
 
 .social-icon-container{
-    padding: 1rem 2rem;
+padding: 1rem 2rem;
 }
 
 .social-icon {
-    width: 2rem;
-}
+width: 2rem;
+} */
 
 @media screen and (max-width: 600px) {
-    .title-container {
-        flex-direction: column;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    nav a {
-      font-size: .75rem;
-    }
-
-    .title-image {
-        width: 4rem;
-        height: max-content;
-        padding: .5rem 0;
-    }
-
-    .social-icon {
-        width: 1.5rem;
-    }
+    
 }
-
-/* footer > div > img {
-    height: 20px;
-    margin: 0px 15px;
-} */
-
-/* .footer-contact {
-    display: flex;
-    flex-direction: row;
-} */
-
-/* .footer-contact-item {
-    flex: 50%
-} */
-  
-/* Responsive layout - makes a one column layout instead of a two-column layout */
 
 #footer-emoji-right {
     display: inline-block;
