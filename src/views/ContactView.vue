@@ -125,6 +125,7 @@
                 )
                 .then((response) => response.json())
                 .then((data) => {
+                    console.log(('RESPONSE STATUS: ', data.statusCode))
                     console.log('RESPONSE: ', data)
                     //let responseBody = JSON.parse(data);
                     this.submitting = false
