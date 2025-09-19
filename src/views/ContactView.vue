@@ -114,13 +114,13 @@
                             "Content-Type": "application/json",
                         },
                         redirect: "follow",
-                        body: JSON.stringify({
+                        body: {
                             "topic": this.topic,
                             "name": this.name,
                             "email": this.email,
                             "message": this.message,
                             "honeyPot": this.question
-                        })
+                        }
                     });
                     console.log('RESPONSE OK: ', response.ok),
                     console.log('RESPONSE STATUS: ', response.status);
