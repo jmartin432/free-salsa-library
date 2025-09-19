@@ -127,11 +127,11 @@
                     const data = await response.json();
                     console.log('RESPONSE: ', data)
                     this.submitting = false
-                    if (data.status === 200) {
+                    if (response.status !== 200) {
+                        throw new Error('Contact Form Submission Error')
+                    } else {
                         console.log('SUCCESS');
                         this.submitStatus = 'success';
-                    } else {
-                        throw new Error('Contact Form Submission Error')
                     }
                 } catch (error) {
                     this.submitting = false
