@@ -114,13 +114,13 @@
                             "Content-Type": "application/json",
                         },
                         redirect: "follow",
-                        body: {
+                        body: JSON.stringify({
                             "topic": this.topic,
                             "name": this.name,
                             "email": this.email,
                             "message": this.message,
                             "honeyPot": this.question
-                        }
+                        })
                     });
                     console.log('RESPONSE OK: ', response.ok),
                     console.log('RESPONSE STATUS: ', response.status);
@@ -128,7 +128,7 @@
                     console.log('RESPONSE: ', data)
                     this.submitting = false
                     if (response.status !== 200) {
-                        throw new Error('Contact Form Submission Error')
+                        throw new Error('CONTACT FORM SUBMISSION ERROR')
                     } else {
                         console.log('SUCCESS');
                         this.submitStatus = 'success';
