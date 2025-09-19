@@ -68,8 +68,8 @@
                 url: 'https://oj6vub3ps7.execute-api.us-east-1.amazonaws.com/prod/contact/fsl',
                 topic: '',
                 topicOptions: {
-                    1: {value: 'general', label: 'General Information'},
-                    2: {value: 'website', label: 'Website Issue'},
+                    1: {value: 'General Information', label: 'General Information'},
+                    2: {value: 'Website Issue', label: 'Website Issue'},
                 },
                 question: null,
                 name: '',
