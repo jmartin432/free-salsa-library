@@ -90,8 +90,7 @@
                 this.name = this.email = this.message = "";
                 this.submitStatus = null;
             },
-
-            submitForm: function(event) {
+            async submitForm(event) {
                 //event.preventDefault()
                 if (this.submitting) {
                     console.log('Form is submitting, Please wait.');
@@ -105,7 +104,8 @@
                 if (!this.topic || !this.name || !((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email))) || !this.message) return;
                 this.submitting = true;
                 this.submitStatus = 'submitting';
-                fetch(
+                try {
+                    const response = await fetch(
                     this.url, {
                         method: "POST",
                         mode: "cors",
@@ -121,13 +121,11 @@
                             "message": this.message,
                             "honeyPot": this.question
                         })
-                    }
-                )
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log(('RESPONSE STATUS: ', data.statusCode))
+                    });
+                    console.log('RESPONSE OK: ', response.ok),
+                    console.log('RESPONSE STATUS: ', response.status);
+                    const data = await response.json();
                     console.log('RESPONSE: ', data)
-                    //let responseBody = JSON.parse(data);
                     this.submitting = false
                     if (data.statusCode === 200) {
                         console.log('SUCCESS');
@@ -135,12 +133,11 @@
                     } else {
                         throw new Error('Contact Form Submission Error')
                     }
-                })
-                .catch((error) => {
+                } catch (error) {
                     this.submitting = false
                     console.error('ERROR: ', error);
                     this.submitStatus = 'fail';
-                });
+                }
             }
         },
     };
