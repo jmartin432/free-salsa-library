@@ -96,7 +96,7 @@
                     console.log('Form is submitting, Please wait.');
                     return; 
                 }
-                console.log('Submitting Form');
+                console.log('SUBMITTING FORM');
                 this.topicWarning = !this.topic ? " * Please choose a topic." : " * ";
                 this.nameWarning = !this.name ? " * This field is required." : " * ";
                 this.emailWarning = ((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email))) ? " * " : " * Please enter a valid email."
