@@ -79,7 +79,10 @@
                 topic: '',
                 topicOptions: {
                     1: {value: 'General Information', label: 'General Information'},
-                    2: {value: 'Website Issue', label: 'Website Issue'},
+                    2: {value: 'Content Question', label: 'Content Question'},
+                    3: {value: 'Content Suggestion', label: 'Content Suggestion'},
+                    4: {value: 'Volunteering', label: 'Volunteering' },
+                    5: {value: 'Website Issue', label: 'Website Issue'},
                 },
                 question: null,
                 name: '',

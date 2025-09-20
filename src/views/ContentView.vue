@@ -5,7 +5,7 @@
 <template>
     <div>
         <h3>Welcome</h3>
-        <p>
+        <p class="p-title">
             Here you will find lots of accordions with salsa music, dance moves and culture.
         </p>
     </div>
@@ -22,7 +22,7 @@
                         </a>
                     </div> -->
                     <div class="text-cell">
-                        <p>{{ detail.text }}</p>
+                        <p class="p-content">{{ detail.text }}</p>
                         <ul :key="index">
                             <li v-for="(link, index) in detail.links" :key="index">
                                 <a class="content-link" :key="index" :href="link.url" target="_blank">{{ link.text }}</a>

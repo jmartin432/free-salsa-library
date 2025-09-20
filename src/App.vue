@@ -130,8 +130,15 @@ h3 {
 p {
     /* font-family: Alegreya; */
     padding: .75rem;
-    text-align: center;
     font-size: 1.25rem;
+}
+
+p.p-title {
+    text-align: center;
+}
+
+p.p-content {
+    text-align: left;
 }
 
 summary {
@@ -139,74 +146,17 @@ summary {
     padding: 1rem;
 }
 
-details p {
-    text-align: left;
-}
-
-details ul {
+ul {
     list-style-type: none;
     padding: 2rem;
 }
-details li {
+
+li {
     padding: .5rem;
 }
 
 a {
     color: #000;
     font-size: 1.25rem;
-}
-
-
-
-/* footer {
-font-size: 1rem;
-font-family: "Poppins", sans-serif;
-width: 100%;
-padding: 2rem 0;
-color: #000;
-transition-duration: .75s;
-border-top: 1px solid #000;
-margin-top: 2rem;
-}
-
-#footer-message{
-text-align: center;
-}
-
-#footer-social-icons {
-display: flex;
-justify-content: center;
-}
-
-.social-icon-container{
-padding: 1rem 2rem;
-}
-
-.social-icon {
-width: 2rem;
-} */
-
-@media screen and (max-width: 600px) {
-    
-}
-
-#footer-emoji-right {
-    display: inline-block;
-    transform: scale(-1, 1);
-    transition-duration: .75s;
-}
-
-#footer-emoji-left {
-    display: inline-block;
-    transform: scale(1, 1);
-    transition-duration: .75s;
-}
-
-footer:hover #footer-emoji-right {
-    transform: scale(1, 1);
-}
-
-footer:hover #footer-emoji-left {
-    transform: scale(-1, 1);
 }
 </style>
