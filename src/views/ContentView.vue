@@ -38,8 +38,8 @@
         </section>
     </div>
     <div v-if="showVideoModal" id="video-modal-container">
-        <video controls autoplay :key="currentVideo">
-            <source :src="currentVideo" type="video/mp4"></source>
+        <video controls autoplay :key="currentVideo" @loadstart="videoLoadStarted" @loadeddata="videoLoadedData">
+            <source src="https://freesalsalibrary.com/videos/clave.mp4" type="video/mp4"></source>
         </video>
         <button class="control-item" @click="handleCloseVideoModal()">Close</button>
     </div>
@@ -208,6 +208,12 @@
                 this.currentVideo = null;
                 this.showVideoModal = false;
             },
+            videoLoadStarted() {
+                console.log('VIDEO LOAD STARTED');
+            },
+            videoLoadedData() {
+                console.log('DATA LOADED');
+            }
         }
     }
 
