@@ -82,7 +82,7 @@
                                     }
                                 ],
                                 thumbnailUrl: 'src/assets/images/image-coming-soon-3x2.jpg',
-                                videoUrl: '/clave.mp4'
+                                videoUrl: './videos/clave.mp4'
                             }
                         ]
                     },
