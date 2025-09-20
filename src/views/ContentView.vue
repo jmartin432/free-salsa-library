@@ -17,7 +17,7 @@
                 <summary>{{ detail.summary }}</summary>
                 <div :class="[(detail.type === 'video') ? 'video-detail' : 'text-detail', 'content-detail']">
                     <!-- <div v-if="detail.type === 'video'" class="thumbnail-cell">
-                        <a :href="detail.videoUrl">
+                        <a :href="detail.videoName">
                             <img :src=detail.thumbnailUrl>
                         </a>
                     </div> -->
@@ -29,7 +29,7 @@
                             </li>
                         </ul>
                         <div v-show="detail.type === 'video'">
-                            <button v-if="detail.videoUrl" class="control-item" @click="handleShowVideoModal(detail.videoUrl)">Play</button>
+                            <button v-if="detail.videoName" class="control-item" @click="handleShowVideoModal(detail.videoName)">Play</button>
                             <p v-else>Video Coming Soon!</p>
                         </div>
                     </div>
@@ -39,14 +39,40 @@
     </div>
     <div v-if="showVideoModal" id="video-modal-container">
         <video controls autoplay :key="currentVideo" @loadstart="videoLoadStarted" @loadeddata="videoLoadedData">
-            <source src="https://freesalsalibrary.com/videos/clave.mp4" type="video/mp4"></source>
+            <source :src="videoSource" type="video/mp4"></source>
         </video>
-        <button class="control-item" @click="handleCloseVideoModal()">Close</button>
+        <button class="control-item" @click="handleCloseVideoModal">Close</button>
     </div>
 </template>
 
 <script>
     export default {
+        methods: {
+            handleShowVideoModal(videoName) {
+                console.log(videoName);
+                this.currentVideo = videoName;
+                this.showVideoModal = true;
+            },
+            handleCloseVideoModal() {
+                this.currentVideo = null;
+                this.showVideoModal = false;
+            },
+            videoLoadStarted() {
+                console.log('VIDEO LOAD STARTED');
+            },
+            videoLoadedData() {
+                console.log('DATA LOADED');
+            }
+        },
+        computed: {
+            videoSource() {
+            // Example: Constructing a URL with the video ID
+            return `https://freesalsalibrary.com/videos/${this.currentVideo}`;
+
+            // Or, if using local assets (requires appropriate build configuration for asset handling):
+            // return require(`@/assets/${this.videoFileName}`);
+            }
+        },
         data() {
             return {
                 currentVideo: null,
@@ -70,7 +96,7 @@
                                     }
                                 ],
                                 thumbnailUrl: null,
-                                videoUrl: null
+                                videoName: null
                             },
                             {
                                 summary: 'The Clave',
@@ -85,7 +111,7 @@
                                     }
                                 ],
                                 thumbnailUrl: null,
-                                videoUrl: './videos/clave.mp4'
+                                videoName: 'clave.mp4'
                             }
                         ]
                     },
@@ -98,7 +124,7 @@
                                 type: 'video',
                                 links: [],
                                 thumbnailUrl: null,
-                                videoUrl: null
+                                videoName: null
                             },
                             {
                                 summary: 'The Basic Step',
@@ -106,7 +132,7 @@
                                 type: 'video',
                                 links: [],
                                 thumbnailUrl: null,
-                                videoUrl: null
+                                videoName: 'basic-step.mp4'
                             },
                             {
                                 summary: 'The Side Basic',
@@ -114,7 +140,7 @@
                                 type: 'video',
                                 links: [],
                                 thumbnailUrl: null,
-                                videoUrl: null
+                                videoName: null
                             },
                             {
                                 summary: 'The Back Basic',
@@ -122,7 +148,7 @@
                                 type: 'video',
                                 links: [],
                                 thumbnailUrl: null,
-                                videoUrl: null
+                                videoName: null
                             }
                         ]
                     },
@@ -135,7 +161,7 @@
                                 type: 'video',
                                 links: [],
                                 thumbnailUrl: null,
-                                videoUrl: null
+                                videoName: null
                             },
                             {
                                 summary: 'Changing Connections',
@@ -143,7 +169,7 @@
                                 type: 'video',
                                 links: [],
                                 thumbnailUrl: null,
-                                videoUrl: null
+                                videoName: null
                             },
                             {
                                 summary: 'Cross Body Lead',
@@ -151,7 +177,7 @@
                                 type: 'video',
                                 links: [],
                                 thumbnailUrl: null,
-                                videoUrl: null
+                                videoName: null
                             },
                             {
                                 summary: `Follow's Right Turn`,
@@ -159,7 +185,7 @@
                                 type: 'video',
                                 links: [],
                                 thumbnailUrl: null,
-                                videoUrl: null
+                                videoName: null
                             },
                             {
                                 summary: `Lead's Right Turn`,
@@ -167,7 +193,7 @@
                                 type: 'video',
                                 links: [],
                                 thumbnailUrl: null,
-                                videoUrl: null
+                                videoName: null
                             },
                             {
                                 summary: `The Walk-Through`,
@@ -175,7 +201,7 @@
                                 type: 'video',
                                 links: [],
                                 thumbnailUrl: null,
-                                videoUrl: null
+                                videoName: null
                             },
                             {
                                 summary: `Cross-Body Lead with Inside Turn`,
@@ -183,7 +209,7 @@
                                 type: 'video',
                                 links: [],
                                 thumbnailUrl: null,
-                                videoUrl: null
+                                videoName: null
                             },
                             {
                                 summary: `Cross-Body Lead with Outside Turn`,
@@ -191,29 +217,12 @@
                                 type: 'video',
                                 links: [],
                                 thumbnailUrl: null,
-                                videoUrl: null
+                                videoName: null
                             }
                         ]
                     }
                 ],
             };
-        },
-        methods: {
-            handleShowVideoModal(videoUrl) {
-                console.log(videoUrl);
-                this.currentvideo = videoUrl;
-                this.showVideoModal = true;
-            },
-            handleCloseVideoModal() {
-                this.currentVideo = null;
-                this.showVideoModal = false;
-            },
-            videoLoadStarted() {
-                console.log('VIDEO LOAD STARTED');
-            },
-            videoLoadedData() {
-                console.log('DATA LOADED');
-            }
         }
     }
 
