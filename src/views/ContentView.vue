@@ -38,7 +38,7 @@
         </section>
     </div>
     <div v-if="showVideoModal" id="video-modal-container">
-        <video controls :key="currentVideo">
+        <video controls autoplay :key="currentVideo">
             <source :src="currentVideo" type="video/mp4"></source>
         </video>
         <button class="control-item" @click="handleCloseVideoModal()">Close</button>
