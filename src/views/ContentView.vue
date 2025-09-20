@@ -37,11 +37,13 @@
             </details>
         </section>
     </div>
-    <div v-if="showVideoModal" id="video-modal-container">
-        <video controls autoplay :key="currentVideo" @loadstart="videoLoadStarted" @loadeddata="videoLoadedData">
-            <source :src="videoSource" type="video/mp4"></source>
-        </video>
-        <button class="control-item" @click="handleCloseVideoModal">Close</button>
+    <div v-if="showVideoModal" id="video-modal">
+        <div id="video-container">
+            <video controls autoplay :key="currentVideo" @loadstart="videoLoadStarted" @loadeddata="videoLoadedData">
+                <source :src="videoSource" type="video/mp4"></source>
+            </video>
+            <button id="modal-close-button" class="control-item" @click="handleCloseVideoModal">Close</button>
+        </div>
     </div>
 </template>
 
@@ -254,14 +256,38 @@
     margin: auto;
 }
 
-#video-modal-container {
+#video-modal {
+    background-color: #00000044;
     position: fixed;
-    top: 5px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 16 / 9;
+    max-width: 90vw;
+    max-height: 90vh;
     border: 1px solid red;
 }
 
+#video-container {
+    position: relative;
+    background: none;
+    margin: auto;
+    height: 97%;
+}
+
+#modal-close-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
 video {
-    width: 100%;
-    aspect-ratio: 16 / 9;
+    max-height: 100%;
+    margin: auto;
+    border: 1px solid black;
+    /* aspect-ratio: 16 / 9; */
 }
 </style>
