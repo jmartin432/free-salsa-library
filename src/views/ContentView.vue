@@ -16,11 +16,11 @@
             <details v-for="(detail, index) in section.details" class="section-details" :key="index">
                 <summary>{{ detail.summary }}</summary>
                 <div :class="[(detail.type === 'video') ? 'video-detail' : 'text-detail', 'content-detail']">
-                    <div v-if="detail.type === 'video'" class="thumbnail-cell">
+                    <!-- <div v-if="detail.type === 'video'" class="thumbnail-cell">
                         <a :href="detail.videoUrl">
                             <img :src=detail.thumbnailUrl>
                         </a>
-                    </div>
+                    </div> -->
                     <div class="text-cell">
                         <p>{{ detail.text }}</p>
                         <ul :key="index">
@@ -28,7 +28,10 @@
                                 <a class="content-link" :key="index" :href="link.url" target="_blank">{{ link.text }}</a>
                             </li>
                         </ul>
-                        <button class="control-item" @click="handleShowVideoModal(detail.videoUrl)">Play</button>
+                        <div v-show="detail.type === 'video'">
+                            <button v-if="detail.videoUrl" class="control-item" @click="handleShowVideoModal(detail.videoUrl)">Play</button>
+                            <p v-else>Video Coming Soon!</p>
+                        </div>
                     </div>
                 </div>    
             </details>
@@ -66,8 +69,8 @@
                                         url: 'https://open.spotify.com/playlist/1Nxch1X0gqD3nttSWZydUT?si=e8466da5a6694613'
                                     }
                                 ],
-                                thumbnailUrl: '',
-                                videoUrl: ''
+                                thumbnailUrl: null,
+                                videoUrl: null
                             },
                             {
                                 summary: 'The Clave',
@@ -81,7 +84,7 @@
                                         url: 'https://open.spotify.com/playlist/6P6I7wBmlRNEWJRhtkYhwq?si=d963d7cc58d6457b'
                                     }
                                 ],
-                                thumbnailUrl: 'src/assets/images/image-coming-soon-3x2.jpg',
+                                thumbnailUrl: null,
                                 videoUrl: './videos/clave.mp4'
                             }
                         ]
@@ -94,32 +97,32 @@
                                 text: `This video will explain the difference between the basic steps of on1 and on2`,
                                 type: 'video',
                                 links: [],
-                                thumbnailUrl: '',
-                                videoUrl: ''
+                                thumbnailUrl: null,
+                                videoUrl: null
                             },
                             {
                                 summary: 'The Basic Step',
                                 text: `This video will demonstrate the On2 Basic`,
                                 type: 'video',
                                 links: [],
-                                thumbnailUrl: 'src/assets/images/image-coming-soon-3x2.jpg',
-                                videoUrl: ''
+                                thumbnailUrl: null,
+                                videoUrl: null
                             },
                             {
                                 summary: 'The Side Basic',
                                 text: `This video will demonstrate the On2 Side Basic`,
                                 type: 'video',
                                 links: [],
-                                thumbnailUrl: 'src/assets/images/image-coming-soon-3x2.jpg',
-                                videoUrl: ''
+                                thumbnailUrl: null,
+                                videoUrl: null
                             },
                             {
                                 summary: 'The Back Basic',
                                 text: `This video will demonstrate the On2 Back Basic`,
                                 type: 'video',
                                 links: [],
-                                thumbnailUrl: 'src/assets/images/image-coming-soon-3x2.jpg',
-                                videoUrl: ''
+                                thumbnailUrl: null,
+                                videoUrl: null
                             }
                         ]
                     },
@@ -131,64 +134,64 @@
                                 text: `This video will show the open and closed connections`,
                                 type: 'video',
                                 links: [],
-                                thumbnailUrl: 'src/assets/images/image-coming-soon-3x2.jpg',
-                                videoUrl: ''
+                                thumbnailUrl: null,
+                                videoUrl: null
                             },
                             {
                                 summary: 'Changing Connections',
                                 text: `This video will show how to change from open to closed connection and back again`,
                                 type: 'video',
                                 links: [],
-                                thumbnailUrl: 'src/assets/images/image-coming-soon-3x2.jpg',
-                                videoUrl: ''
+                                thumbnailUrl: null,
+                                videoUrl: null
                             },
                             {
                                 summary: 'Cross Body Lead',
                                 text: `Some text about the move.`,
                                 type: 'video',
                                 links: [],
-                                thumbnailUrl: 'src/assets/images/image-coming-soon-3x2.jpg',
-                                videoUrl: ''
+                                thumbnailUrl: null,
+                                videoUrl: null
                             },
                             {
                                 summary: `Follow's Right Turn`,
                                 text: `Some text about the move.`,
                                 type: 'video',
                                 links: [],
-                                thumbnailUrl: 'src/assets/images/image-coming-soon-3x2.jpg',
-                                videoUrl: ''
+                                thumbnailUrl: null,
+                                videoUrl: null
                             },
                             {
                                 summary: `Lead's Right Turn`,
                                 text: `Some text about the move.`,
                                 type: 'video',
                                 links: [],
-                                thumbnailUrl: 'src/assets/images/image-coming-soon-3x2.jpg',
-                                videoUrl: ''
+                                thumbnailUrl: null,
+                                videoUrl: null
                             },
                             {
                                 summary: `The Walk-Through`,
                                 text: `Some text about the move.`,
                                 type: 'video',
                                 links: [],
-                                thumbnailUrl: 'src/assets/images/image-coming-soon-3x2.jpg',
-                                videoUrl: ''
+                                thumbnailUrl: null,
+                                videoUrl: null
                             },
                             {
                                 summary: `Cross-Body Lead with Inside Turn`,
                                 text: `Some text about the move.`,
                                 type: 'video',
                                 links: [],
-                                thumbnailUrl: 'src/assets/images/image-coming-soon-3x2.jpg',
-                                videoUrl: ''
+                                thumbnailUrl: null,
+                                videoUrl: null
                             },
                             {
                                 summary: `Cross-Body Lead with Outside Turn`,
                                 text: `Some text about the move.`,
                                 type: 'video',
                                 links: [],
-                                thumbnailUrl: 'src/assets/images/image-coming-soon-3x2.jpg',
-                                videoUrl: ''
+                                thumbnailUrl: null,
+                                videoUrl: null
                             }
                         ]
                     }
@@ -215,7 +218,7 @@
     display: grid;
 }
 
-.video-detail {
+/* .video-detail {
     grid-template-columns: 30% 70%;
 }
 .thumbnail-cell {
@@ -225,10 +228,21 @@
 .thumbnail-cell img {
   width: 100%;
   height: 100%;
+} */
+
+.text-detail, video-detail {
+    grid-template-columns: 100%;
 }
 
-.text-detail {
-    grid-template-columns: 100%;
+.text-cell {
+    width: 80%;
+    margin: auto;
+}
+
+#video-modal-container {
+    position: fixed;
+    top: 5px;
+    border: 1px solid red;
 }
 
 video {
