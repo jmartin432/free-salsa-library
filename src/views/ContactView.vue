@@ -123,30 +123,29 @@
                 if (!this.topic || !this.name || !((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email))) || !this.message) return;
                 this.submitting = true;
                 try {
-                    // const response = await fetch(
-                    // this.url, {
-                    //     method: "POST",
-                    //     mode: "cors",
-                    //     credentials: "omit",
-                    //     headers: {
-                    //         "Content-Type": "application/json",
-                    //     },
-                    //     redirect: "follow",
-                    //     body: JSON.stringify({
-                    //         "topic": this.topic,
-                    //         "name": this.name,
-                    //         "email": this.email,
-                    //         "message": this.message,
-                    //         "honeyPot": this.question
-                    //     })
-                    // });
-                    // console.log('RESPONSE OK: ', response.ok),
-                    // console.log('RESPONSE STATUS: ', response.status);
-                    // const data = await response.json();
-                    // console.log('RESPONSE: ', data);
+                    const response = await fetch(
+                    this.url, {
+                        method: "POST",
+                        mode: "cors",
+                        credentials: "omit",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        redirect: "follow",
+                        body: JSON.stringify({
+                            "topic": this.topic,
+                            "name": this.name,
+                            "email": this.email,
+                            "message": this.message,
+                            "honeyPot": this.question
+                        })
+                    });
+                    console.log('RESPONSE OK: ', response.ok),
+                    console.log('RESPONSE STATUS: ', response.status);
+                    const data = await response.json();
+                    console.log('RESPONSE: ', data);
 
-
-                    const response = { status: 200 }; //Dont forget to comment out
+                    //const response = { status: 200 }; //Dont forget to comment out
                     //const response = { status: 400 }; //Dont forget to comment out
                     if (response.status !== 200) {
                         throw new Error('CONTACT FORM SUBMISSION ERROR')
