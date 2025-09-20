@@ -1,3 +1,7 @@
+<script setup>
+    import VideoModal from '../components/VideoModal.vue';
+</script>
+
 <template>
     <div>
         <h3>Welcome</h3>
@@ -24,10 +28,17 @@
                                 <a class="content-link" :key="index" :href="link.url" target="_blank">{{ link.text }}</a>
                             </li>
                         </ul>
+                        <button class="control-item" @click="handleShowVideoModal(detail.videoUrl)">Play</button>
                     </div>
                 </div>    
             </details>
         </section>
+    </div>
+    <div v-if="showVideoModal" id="video-modal-container">
+        <video controls :key="currentVideo">
+            <source :src="currentVideo" type="video/mp4"></source>
+        </video>
+        <button class="control-item" @click="handleCloseVideoModal()">Close</button>
     </div>
 </template>
 
@@ -35,6 +46,8 @@
     export default {
         data() {
             return {
+                currentVideo: null,
+                showVideoModal: false,
                 sections: [
                     {
                         sectionTitle: 'Salsa Music',
@@ -69,7 +82,7 @@
                                     }
                                 ],
                                 thumbnailUrl: 'src/assets/images/image-coming-soon-3x2.jpg',
-                                videoUrl: ''
+                                videoUrl: 'src/assets/videos/clave.mp4'
                             }
                         ]
                     },
@@ -181,6 +194,17 @@
                     }
                 ],
             };
+        },
+        methods: {
+            handleShowVideoModal(videoUrl) {
+                console.log(videoUrl);
+                this.currentvideo = videoUrl;
+                this.showVideoModal = true;
+            },
+            handleCloseVideoModal() {
+                this.currentVideo = null;
+                this.showVideoModal = false;
+            },
         }
     }
 
@@ -205,5 +229,10 @@
 
 .text-detail {
     grid-template-columns: 100%;
+}
+
+video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
 }
 </style>
