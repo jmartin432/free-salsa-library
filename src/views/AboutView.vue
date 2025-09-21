@@ -6,12 +6,12 @@
             and sharing educational resources promoting Salsa dancing, Salsa music and healthy fun social dance spaces.
         </p>
 
-        <p class="p-content">
+        <!-- <p class="p-content">
             If you are interesting in offering some time as a volunteer we could use assistance with:
         </p>
         <ul>
             <li>
-                Content Prduction
+                Content Production
             </li>
             <li>
                 Promotion and Social Media
@@ -22,7 +22,7 @@
         </ul>
         <p class="p-content">
             If you would like to contribute in some way please reach out on the Contact page.
-        </p>
+        </p> -->
     </div>
 </template>
 

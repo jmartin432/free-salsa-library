@@ -63,7 +63,7 @@
                     v-model="message"
                 ></textarea>
             </div>
-            <div class="submit-button-container">
+            <div class="submit-button-container form-item">
                 <button type="button" id="form-submit-button" @click=submitForm>Submit</button>
             </div>
         </form>
@@ -170,6 +170,9 @@
 </script>
 
 <style>
+.form-item {
+    padding-top: .75rem;
+}
 
 .form-item input, .form-item textarea, .form-item select{
     background-color: #ddd;
@@ -178,6 +181,11 @@
 .nobueno {
     display: none;
 }
+
+.required-warning {
+    color: red;
+}
+
 @media (min-width: 1024px) {
   .contact {
     min-height: 100vh;
