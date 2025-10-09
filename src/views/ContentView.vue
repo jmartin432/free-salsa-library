@@ -6,14 +6,16 @@
     <div>
         <h3>Welcome</h3>
         <p class="p-title">
-            Here you will find lots of accordions with salsa music, dance moves and culture.
+            Free Salsa Library is a collection of educatinal videos and music to help get started with Salsa dincing. Salsa 
+            has been around for a long time and it can be hard to know where to start. If you have any questions or suggestions 
+            for content please get in touch with the contact form. Thank you, and keep dancing! 
         </p>
     </div>
 
     <div id="content-container">
-        <section v-for="(section, index) in sections" class="content-section" :key="index">
+        <section v-for="(section, index) in sections" v-show="section.show" class="content-section" :key="index">
             <h3>{{ section.sectionTitle }}</h3>
-            <details v-for="(detail, index) in section.details" class="section-details" :key="index">
+            <details v-for="(detail, index) in section.details" v-show="detail.show" class="section-details" :key="index">
                 <summary>{{ detail.summary }}</summary>
                 <div :class="[(detail.type === 'video') ? 'video-detail' : 'text-detail', 'content-detail']">
                     <!-- <div v-if="detail.type === 'video'" class="thumbnail-cell">
@@ -82,16 +84,30 @@
                 sections: [
                     {
                         sectionTitle: 'Salsa Music',
+                        show: true,
                         details: [
                             {
-                                summary: 'Playlists',
-                                text: `These are some links to Spotify playlists of our favorite tracks`,
+                                summary: 'Beginner\'s Practice Playlist',
+                                show: true,
+                                text: `Salsa music can get pretty crazy. It's generally pretty fast and rhythmically ocomplex. 
+                                There is also a lot of it out there. THis a playlist of some good tracks to get started with. 
+                                They are on the slower side and hopefully not too overwhlming.`,
                                 type: 'text',
                                 links: [
                                     {
                                         text: `Beginner's Practice Playlist`,
                                         url: 'https://open.spotify.com/playlist/6P6I7wBmlRNEWJRhtkYhwq?si=d963d7cc58d6457b'
-                                    },
+                                    }
+                                ],
+                                thumbnailUrl: null,
+                                videoName: null
+                            },
+                            {
+                                summary: 'Beginner\'s Practice Playlist',
+                                show: false,
+                                text: `These are some links to Spotify playlists of our favorite tracks`,
+                                type: 'text',
+                                links: [
                                     {
                                         text: `Justin's Favorites`,
                                         url: 'https://open.spotify.com/playlist/1Nxch1X0gqD3nttSWZydUT?si=e8466da5a6694613'
@@ -102,6 +118,7 @@
                             },
                             {
                                 summary: 'The Clave',
+                                show: false,
                                 text: `The clave is the backbone of Salsa music. 
                                     Sometimes you hear it clearly sometimes you don't but it is always there in 
                                     Salsa music. Many of the songs in the Beginner's playlist have a very clear clave`,
@@ -119,6 +136,7 @@
                     },
                     {
                         sectionTitle: 'The Basic Steps',
+                        show: false,
                         details: [
                             {
                                 summary: 'On1 or On2',
@@ -156,6 +174,7 @@
                     },
                     {
                         sectionTitle: 'Beginner Partner Work',
+                        show: false,
                         details: [
                             {
                                 summary: 'Connections',

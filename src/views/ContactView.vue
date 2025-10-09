@@ -10,7 +10,8 @@
              </div>
             <div id="submit-fail" v-else>
                 <p>
-                    There was a problem submitting your message. Please send an email to <a>info@justinlmartin.com</a>
+                    There was a problem submitting your message. Please send an email to 
+                    <strong>justin@freesalsalibrary.com</strong>
                 </p>
             </div>
         </div>
