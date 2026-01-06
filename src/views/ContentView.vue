@@ -6,9 +6,9 @@
     <div>
         <h3>Welcome</h3>
         <p class="p-title">
-            Free Salsa Library is a collection of educatinal videos and music to help get started with Salsa dincing. Salsa 
-            has been around for a long time and it can be hard to know where to start. If you have any questions or suggestions 
-            for content please get in touch with the contact form. Thank you, and keep dancing! 
+            The mission of Free Salsa Library is to provide educational resources related to Salsa dancing, 
+            Salsa music and social dancing culture. Salsa is an improvised, social dance and we believe that 
+            it can be a vibrant avenue for self-expression, community-building and fitness.
         </p>
     </div>
 
@@ -84,7 +84,7 @@
                 sections: [
                     {
                         sectionTitle: 'Salsa Music',
-                        show: true,
+                        show: false,
                         details: [
                             {
                                 summary: 'Beginner\'s Practice Playlist',
