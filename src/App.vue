@@ -14,15 +14,6 @@
 
 <style>
 
-nav {
-    width: 100%;
-    font-size: 1rem;
-    text-align: center;
-    margin: auto;
-    padding: 1rem 0;
-    border-top: 1px solid #000
-}
-
 .view-container {
     flex-grow: 1;
     padding: 2rem;

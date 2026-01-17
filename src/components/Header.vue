@@ -30,6 +30,7 @@ header {
 .title-container {
     width: 100%;
     display: flex;
+    align-items: center;
     margin: 0 auto;
     justify-content: center;
     margin-bottom: 1rem;
@@ -60,16 +61,6 @@ h2 {
     margin: 0;
 }
 
-nav a {
-    color: #000;
-    text-decoration: none;
-    display: inline-block;
-    padding: 0 1rem;
-    border-left: 1px solid #000;
-    font-family: "Open Sans";
-    font-weight: 500;
-}
-
 @media (max-width: 600px) {
   .title-container {
     flex-direction: column;
@@ -91,6 +82,16 @@ nav a {
     font-size: 1.5rem;
   }
 }
+
+/* nav a {
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 1rem;
+    border-left: 1px solid #000;
+    font-family: "Open Sans";
+    font-weight: 500;
+} */
 
 /* nav a:hover {
     background-color: #555;
