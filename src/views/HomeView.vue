@@ -1,28 +1,38 @@
 <script setup>
     import VideoModal from '../components/VideoModal.vue';
+    import ContactForm from '../components/ContactForm.vue';
 </script>
 
 <template>
     <div>
         <h3>Welcome</h3>
         <p class="p-title">
-            The mission of Free Salsa Library is to provide educational resources related to Salsa dancing, 
-            Salsa music and social dancing culture. Salsa is an improvised, social dance and we believe that 
-            it can be a vibrant avenue for self-expression, community-building and fitness.
+            Free Salsa Library is a community resource for all things related to Salsa dancing. We offer classes 
+            and workshops on Salsa dancing, we provide educational resources on Salsa music 
+            and history and we promote healthy, fun social dancing events in the Portland, OR area. We believe 
+            that Salsa dancing (and social dancing in general) can be a vibrant avenue for self-expression, 
+            community-building and fitness.
         </p>
+        <!-- <p>
+            For more information use the contact form below.
+        </p> -->
     </div>
 
-    <div id="content-container">
+    <!-- <div>
+        <ContactForm></ContactForm>
+    </div> -->
+
+    <!-- <div id="content-container">
         <section v-for="(section, index) in sections" v-show="section.show" class="content-section" :key="index">
             <h3>{{ section.sectionTitle }}</h3>
             <details v-for="(detail, index) in section.details" v-show="detail.show" class="section-details" :key="index">
                 <summary>{{ detail.summary }}</summary>
                 <div :class="[(detail.type === 'video') ? 'video-detail' : 'text-detail', 'content-detail']">
-                    <!-- <div v-if="detail.type === 'video'" class="thumbnail-cell">
+                    <div v-if="detail.type === 'video'" class="thumbnail-cell">
                         <a :href="detail.videoName">
                             <img :src=detail.thumbnailUrl>
                         </a>
-                    </div> -->
+                    </div>
                     <div class="text-cell">
                         <p class="p-content">{{ detail.text }}</p>
                         <ul :key="index">
@@ -46,7 +56,7 @@
             </video>
             <button id="modal-close-button" class="control-item" @click="handleCloseVideoModal">Close</button>
         </div>
-    </div>
+    </div> -->
 </template>
 
 <script>
@@ -249,7 +259,12 @@
 
 </script>
 
-<style>
+<style scoped>
+
+p {
+    text-align: left;
+}
+
 .content-detail {
     display: grid;
 }
