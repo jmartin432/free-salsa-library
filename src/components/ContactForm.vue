@@ -1,7 +1,7 @@
 <template>
   <div id="contact-form-main">
         <h3>Contact Us</h3>
-        <div id="submit-message">
+        <div id="submit-message-container">
             <span>{{submitMessage}}</span>
         </div>
             <!-- <div id="submit-fail" v-else>
@@ -88,9 +88,9 @@
                 nameWarning: ' * ',
                 emailWarning: ' * ',
                 messageWarning: ' * ',
-                submitting: false,
-                submitted: false,
-                submitSuccess: true,
+                // submitting: false,
+                // submitted: false,
+                // submitSuccess: true,
                 submitMessage: 'Your message was submitted. Keep on dancing!'
             };
         },
@@ -99,16 +99,15 @@
 
             resetForm() {
                 this.name = this.email = this.message = "";
-                this.submitStatus = null;
+                //this.submitStatus = null;
             },
-            displySubmitMessage(succes) {
-                if (success) {
-                    // show message and set fade timeout
-                } else {
-                    // show error with x button
-                }
-
-            },
+            // displySubmitMessage(succes) {
+            //     if (success) {
+            //         // show message and set fade timeout
+            //     } else {
+            //         // show error with x button
+            //     }
+            // },
             async submitForm(event) {
                 console.log('VALIDATING FORM DATA');
                 //this.topicWarning = !this.topic ? " * Please choose a topic." : " * ";
@@ -143,14 +142,17 @@
                     console.log('RESPONSE: ', data);
                     console.log('RESPONSE OK: ', response.ok),
                     console.log('RESPONSE STATUS: ', response.status);
-                    const submitMessage = document.getElementById('submit-message');
-                    submitMessage.classList.add('visible');
+                    const submitMessageContainer = document.getElementById('submit-message-container');
+                    submitMessageContainer.classList.add('visible');
                     if (response.status !== 200) {
                         this.submitMessage = 'There was a problem submitting the form. Please send an email to justin@freesalsalibrary.com'
                         throw new Error('CONTACT FORM SUBMISSION ERROR')
                     } else {
                         submitMessage = 'Your message was submitted. Keep on dancing!';
-                        this.resetForm();
+                        setTimeout(() => {
+                            submitMessageContainer.classList.remove('visible');
+                            this.resetForm();
+                        }, 5000);
                         console.log('SUCCESS');
                     }
                 } catch (error) {
