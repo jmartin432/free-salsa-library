@@ -160,7 +160,7 @@
 
 #submit-message-container {
     font-family: "Open Sans";
-    font-size: .8rem;
+    font-size: 1rem;
     opacity: 0;
     height: 0;
     padding: 0 15px;
@@ -186,19 +186,11 @@
     color: red;
 }
 
-@media (min-width: 1024px) {
-  .contact {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-
 label {
     color: #000;
     margin-bottom: .25rem;
     font-family: "Open Sans";
-    font-size: .8rem;
+    font-size: 1rem;
 }
 
 label span {
@@ -238,7 +230,6 @@ button {
     text-align: center;
     text-decoration: none;
     display: block;
-    font-size: .8rem;
     transition-duration: 0.4s;
     font-family: "Open sans";
     font-size: 1rem;
@@ -256,9 +247,16 @@ button:active {
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2); 
 }
 
-#form-submit-button.disable {
+@media (max-width: 600px) {
+  #contact-form-main {
+    width: 90%;
+  }
 
+  textarea {
+    width: 100%;
+  }
 }
+
 
 /* select.number-select {
     width: 70px;
