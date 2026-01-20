@@ -4,12 +4,6 @@
         <div id="submit-message-container">
             <span>{{submitMessage}}</span>
         </div>
-            <!-- <div id="submit-fail" v-else>
-                <p>
-                    There was a problem submitting your message. Please send an email to 
-                    <strong>justin@freesalsalibrary.com</strong>
-                </p>
-            </div> -->
         <div class="contact-form-container">
             <form id="contact-form" method="post" autocomplete="off">
             <!-- <div class="form-item">
@@ -88,9 +82,6 @@
                 nameWarning: ' * ',
                 emailWarning: ' * ',
                 messageWarning: ' * ',
-                // submitting: false,
-                // submitted: false,
-                // submitSuccess: true,
                 submitMessage: 'Your message was submitted. Keep on dancing!'
             };
         },
@@ -99,15 +90,7 @@
 
             resetForm() {
                 this.name = this.email = this.message = "";
-                //this.submitStatus = null;
             },
-            // displySubmitMessage(succes) {
-            //     if (success) {
-            //         // show message and set fade timeout
-            //     } else {
-            //         // show error with x button
-            //     }
-            // },
             async submitForm(event) {
                 console.log('VALIDATING FORM DATA');
                 //this.topicWarning = !this.topic ? " * Please choose a topic." : " * ";
