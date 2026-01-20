@@ -148,7 +148,7 @@
                         this.submitMessage = 'There was a problem submitting the form. Please send an email to justin@freesalsalibrary.com'
                         throw new Error('CONTACT FORM SUBMISSION ERROR')
                     } else {
-                        submitMessage = 'Your message was submitted. Keep on dancing!';
+                        this.submitMessage = 'Your message was submitted. Keep on dancing!';
                         setTimeout(() => {
                             submitMessageContainer.classList.remove('visible');
                             this.resetForm();
@@ -221,10 +221,6 @@ label {
 label span {
     color: #000;
 }
-
-/* .required-warning {
-    z-index: -10;
-} */
 
 label {
     display: block;
