@@ -1,17 +1,15 @@
 <template>
   <div id="contact-form-main">
         <h3>Contact Us</h3>
-        <div id="contact-results-container" v-show="submitted">
-            <div id="submit-success" v-if="submitSuccess">
-                <p>Your message was submitted. Keep on dancing!</p>
-             </div>
-            <div id="submit-fail" v-else>
+        <div id="submit-message">
+            <span>{{submitMessage}}</span>
+        </div>
+            <!-- <div id="submit-fail" v-else>
                 <p>
                     There was a problem submitting your message. Please send an email to 
                     <strong>justin@freesalsalibrary.com</strong>
                 </p>
-            </div>
-        </div>
+            </div> -->
         <div class="contact-form-container">
             <form id="contact-form" method="post" autocomplete="off">
             <!-- <div class="form-item">
@@ -93,6 +91,7 @@
                 submitting: false,
                 submitted: false,
                 submitSuccess: true,
+                submitMessage: 'Your message was submitted. Keep on dancing!'
             };
         },
 
@@ -112,17 +111,22 @@
             },
             async submitForm(event) {
                 //event.preventDefault()
-                if (this.submitting) {
-                    console.log('Form is submitting, Please wait.');
-                    return; 
-                }
-                console.log('SUBMITTING FORM');
+                // if (this.submitting) {
+                //     console.log('Form is submitting, Please wait.');
+                //     return; 
+                // }
+                console.log('VALIDATING FORM DATA');
                 //this.topicWarning = !this.topic ? " * Please choose a topic." : " * ";
                 this.nameWarning = !this.name ? " * This field is required." : " * ";
                 this.emailWarning = ((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email))) ? " * " : " * Please enter a valid email."
                 this.messageWarning = !this.message ? " * This field is required." : " * ";
-                if (!this.topic || !this.name || !((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email))) || !this.message) return;
-                this.submitting = true;
+                if (!this.name || !((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email))) || !this.message) return;
+                console.log('SUBMITTING FORM');
+                const submitButton = document.getElementById('form-submit-button');
+                submitButton.setAttribute('disabled', true);
+                //this.submitting = true;
+                //const response = { status: 200 }; //Dont forget to comment out
+                //const response = { status: 400 }; //Dont forget to comment out
                 try {
                     const response = await fetch(
                     this.url, {
@@ -141,26 +145,27 @@
                             "honeyPot": this.question
                         })
                     });
-                    console.log('RESPONSE OK: ', response.ok),
-                    console.log('RESPONSE STATUS: ', response.status);
                     const data = await response.json();
                     console.log('RESPONSE: ', data);
-
-                    //const response = { status: 200 }; //Dont forget to comment out
-                    //const response = { status: 400 }; //Dont forget to comment out
+                    console.log('RESPONSE OK: ', response.ok),
+                    console.log('RESPONSE STATUS: ', response.status);
+                    const submitMessage = document.getElementById('submit-message');
+                    submitMessage.classList.add('visible');
                     if (response.status !== 200) {
+                        this.submitMessage = 'There was a problem submitting the form. Please send an email to justin@freesalsalibrary.com'
                         throw new Error('CONTACT FORM SUBMISSION ERROR')
                     } else {
                         console.log('SUCCESS');
-                        this.submitSuccess = true;
+                        //this.submitSuccess = true;
                         this.resetForm();
                     }
                 } catch (error) {
                     console.error('ERROR: ', error);
-                    this.submitSuccess = false;
+                    //this.submitSuccess = false;
                 } finally {
-                    this.submitted = true;
-                    this.submitting = false;                    
+                    submitButton.disabled = false;
+                    // this.submitted = true;
+                    // this.submitting = false;                    
                 }
             }
         },
@@ -176,8 +181,25 @@
     width: 60%;
     margin: auto;
 }
+
+#submit-message {
+    font-family: "Open Sans";
+    font-size: .8rem;
+    opacity: 0;
+    height: 0;
+    padding: 0 15px;
+    overflow: hidden;
+    transition: opacity 0.5s ease-out, height 0.5s ease-out, padding 0.5s ease-out
+}
+
+#submit-message.visible {
+    opacity: 1;
+    height: auto; /* Reclaim space for the content */
+    padding: 15px;
+}
+
 .form-item {
-    padding-top: .75rem;
+    margin: 1rem 0 1rem 0;
 }
 
 .nobueno {
@@ -207,7 +229,11 @@ label span {
     color: #000;
 }
 
-input, label {
+/* .required-warning {
+    z-index: -10;
+} */
+
+label {
     display: block;
 }
 
@@ -219,6 +245,7 @@ input, textarea, select {
     font-family: Alegreya;
     font-size: 1rem;
     box-sizing: border-box;
+    margin-bottom: 5px;
 }
 
 input, textarea {
@@ -243,10 +270,22 @@ button {
     transition-duration: 0.4s;
     font-family: "Open sans";
     font-size: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
     box-shadow: 0 0 10px 5px #d175cb;
+}
+
+button:active {
+  /* Shifts the button down by 4 pixels when clicked */
+  transform: translateY(4px); 
+  /* Adjusts the shadow to simulate being "pressed" into the surface */
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2); 
+}
+
+#form-submit-button.disable {
+
 }
 
 /* select.number-select {

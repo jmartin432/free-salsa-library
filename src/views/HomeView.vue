@@ -13,14 +13,14 @@
             improvised, social dance and we believe that it can be a vibrant avenue for self-expression, 
             community-building and fitness.
         </p>
-        <!-- <p>
+        <p>
             For more information use the contact form below.
-        </p> -->
+        </p>
     </div>
 
-    <!-- <div>
+    <div>
         <ContactForm></ContactForm>
-    </div> -->
+    </div>
 
     <!-- <div id="content-container">
         <section v-for="(section, index) in sections" v-show="section.show" class="content-section" :key="index">
