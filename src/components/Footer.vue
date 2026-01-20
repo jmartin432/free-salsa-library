@@ -23,7 +23,7 @@ footer {
     display: flex;
     width: 100%;
     justify-content: center;
-    padding: 2rem;
+    padding: 2rem 0;
     margin-top: 1rem;
     border-top: 1px solid #000;
 }

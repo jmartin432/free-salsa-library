@@ -150,6 +150,16 @@
 
 <style scoped>
 
+h3 {
+    padding: 1rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-family: Poppins;
+    font-size: 2rem;
+    color: #000;
+}
+
 #contact-form-main {
     display: flex;
     flex-direction: column;;
