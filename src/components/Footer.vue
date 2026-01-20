@@ -30,6 +30,7 @@ footer {
 
 #footer-message {
     text-align: center;
+    font-size: 1rem;
 }
 
 .footer-emoji {
@@ -40,5 +41,15 @@ footer {
 
 footer:hover .footer-emoji {
     transform: scale(-1, 1);
+}
+
+@media (max-width: 600px) {
+  p {
+    font-size: 1rem;
+  }
+
+  .footer-emoji {
+    font-size: 1rem;
+  }
 }
 </style>

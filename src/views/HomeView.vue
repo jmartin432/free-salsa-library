@@ -261,25 +261,26 @@
 
 <style scoped>
 
+h3 {
+    padding: 1rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-family: Poppins;
+    font-size: 2rem;
+    color: #000;
+}
+
 p {
     text-align: left;
+    font-family: Alegreya;
+    padding: .75rem;
+    font-size: 1.25rem;
 }
 
 .content-detail {
     display: grid;
 }
-
-/* .video-detail {
-    grid-template-columns: 30% 70%;
-}
-.thumbnail-cell {
-    padding: 1rem;
-}
-
-.thumbnail-cell img {
-  width: 100%;
-  height: 100%;
-} */
 
 .text-detail, video-detail {
     grid-template-columns: 100%;
@@ -324,4 +325,22 @@ video {
     border: 1px solid black;
     /* aspect-ratio: 16 / 9; */
 }
+
+@media (max-width: 600px) {
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* .video-detail {
+    grid-template-columns: 30% 70%;
+}
+.thumbnail-cell {
+    padding: 1rem;
+}
+
+.thumbnail-cell img {
+  width: 100%;
+  height: 100%;
+} */
 </style>

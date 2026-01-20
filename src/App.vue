@@ -20,30 +20,6 @@
     /* border: 1px solid red; */
 }
 
-h3 {
-    padding: 1rem;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    font-family: Poppins;
-    font-size: 2rem;
-    color: #000;
-}
-
-p {
-    /* font-family: Alegreya; */
-    padding: .75rem;
-    font-size: 1.25rem;
-}
-
-p.p-title {
-    text-align: center;
-}
-
-p.p-content {
-    text-align: left;
-}
-
 summary {
     font-size: 1.5rem;
     padding: 1rem;
