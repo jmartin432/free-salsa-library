@@ -110,11 +110,6 @@
 
             },
             async submitForm(event) {
-                //event.preventDefault()
-                // if (this.submitting) {
-                //     console.log('Form is submitting, Please wait.');
-                //     return; 
-                // }
                 console.log('VALIDATING FORM DATA');
                 //this.topicWarning = !this.topic ? " * Please choose a topic." : " * ";
                 this.nameWarning = !this.name ? " * This field is required." : " * ";
@@ -124,7 +119,6 @@
                 console.log('SUBMITTING FORM');
                 const submitButton = document.getElementById('form-submit-button');
                 submitButton.setAttribute('disabled', true);
-                //this.submitting = true;
                 //const response = { status: 200 }; //Dont forget to comment out
                 //const response = { status: 400 }; //Dont forget to comment out
                 try {
@@ -155,17 +149,14 @@
                         this.submitMessage = 'There was a problem submitting the form. Please send an email to justin@freesalsalibrary.com'
                         throw new Error('CONTACT FORM SUBMISSION ERROR')
                     } else {
-                        console.log('SUCCESS');
-                        //this.submitSuccess = true;
+                        submitMessage = 'Your message was submitted. Keep on dancing!';
                         this.resetForm();
+                        console.log('SUCCESS');
                     }
                 } catch (error) {
                     console.error('ERROR: ', error);
-                    //this.submitSuccess = false;
                 } finally {
-                    submitButton.disabled = false;
-                    // this.submitted = true;
-                    // this.submitting = false;                    
+                    submitButton.disabled = false;                   
                 }
             }
         },
