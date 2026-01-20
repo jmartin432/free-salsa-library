@@ -175,7 +175,7 @@
     margin: auto;
 }
 
-#submit-message {
+#submit-message-container {
     font-family: "Open Sans";
     font-size: .8rem;
     opacity: 0;
@@ -185,7 +185,7 @@
     transition: opacity 0.5s ease-out, height 0.5s ease-out, padding 0.5s ease-out
 }
 
-#submit-message.visible {
+#submit-message-container.visible {
     opacity: 1;
     height: auto; /* Reclaim space for the content */
     padding: 15px;
