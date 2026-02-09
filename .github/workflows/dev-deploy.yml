@@ -1,8 +1,8 @@
-name: Free Salsa Library Deploy
+name: Free Salsa Library Dev Deploy
 on: 
   push:
     branches:
-      - main
+      - dev
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -21,7 +21,7 @@ jobs:
         run: yarn build
 
       - name: Sync Source
-        run: aws s3 sync ./dist s3://${{ secrets.S3_BUCKET }} --delete --exclude "videos/*" --exclude "robots.txt"
+        run: aws s3 sync ./dist s3://${{ secrets.TEST_S3_BUCKET }} --delete --exclude "videos/*" --exclude "robots.txt"
 
       - name: Create Invalidation
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/"
