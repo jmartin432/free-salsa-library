@@ -65,7 +65,7 @@
     export default {
         data() {
             return {
-                url: 'https://oj6vub3ps7.execute-api.us-east-1.amazonaws.com/prod/contact/fsl',
+                url: 'https://twoqlqyshc.execute-api.us-west-2.amazonaws.com/prod/contact/fsl',
                 topic: '',
                 topicOptions: {
                     1: {value: 'General Information', label: 'General Information'},
