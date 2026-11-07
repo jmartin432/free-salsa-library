@@ -44,23 +44,6 @@ img {
     width: 125px;
 }
 
-h1 {
-    font-size: 4rem;
-    color: #000;
-    font-family: Oswald;
-    font-weight: 700;
-    /* text-shadow: 2px 2px 5px #D175CB88; */
-    margin: 0;
-}
-
-h2 {
-    font-size: 3rem;
-    color: #000;
-    font-family: Poppins;
-    font-weight: 400;
-    margin: 0;
-}
-
 @media (max-width: 600px) {
   .title-container {
     flex-direction: column;
