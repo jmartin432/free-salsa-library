@@ -21,6 +21,7 @@
 
 <style scoped>
 #calendar-container {
+    width : 100%;  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,7 +33,27 @@ p {
     line-height: 2rem;
 }
 
+@media (max-width: 767px) {
+  p, a {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
 #calendar-iframe-container {
-    margin: 1rem 0 1rem 0;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; /* Adjust aspect ratio as needed */
+    overflow: hidden;
+}
+
+#calendar-iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 </style>

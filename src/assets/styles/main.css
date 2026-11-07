@@ -26,9 +26,9 @@ body {
   /* border: 1px solid red; */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
     #app {
-        padding: .5rem;
+        padding: .25rem;
     }
 }
 
