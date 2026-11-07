@@ -34,10 +34,15 @@ p {
 }
 
 @media (max-width: 767px) {
-  p, a {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
+
+    h3 {
+        font-size: 1.65rem;
+    }
+
+    p, a {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
 }
 
 #calendar-iframe-container {
