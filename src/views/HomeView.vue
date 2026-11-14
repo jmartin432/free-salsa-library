@@ -14,12 +14,7 @@
 
 @media (max-width: 767px) {
   #home-view-container {
-    padding: 0.25rem;
-  }
-
-  p {
-    font-size: .25rem;
-    line-height: 2rem;
+    padding: 0.5rem;
   }
 }
 

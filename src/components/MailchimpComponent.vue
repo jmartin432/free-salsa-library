@@ -57,7 +57,7 @@ const subscribe = () => {
 <template>
     <div id="mc_embed_shell">
         <form @submit.prevent="subscribe" class="mailchimp-form">
-            <p id="form-title">Subscribe to our newsletter</p>
+            <!-- <p id="form-title">Subscribe to our weekly events newsletter</p> -->
             <div class="email-container">
                 <input
                     id="mc-email"
@@ -88,7 +88,7 @@ const subscribe = () => {
                                 class="refferal_badge" 
                                 src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" 
                                 alt="Intuit Mailchimp" 
-                                style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;">
+                                style="width: 220px; height: 50px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;">
                             </span>
                         </a>
                     </p>
@@ -115,18 +115,61 @@ const subscribe = () => {
   display: block;
 }
 
+input[type="email"] {
+    width: 90%;
+    font-size: 1.25rem;
+    padding: .25rem;
+    border-radius: 4px;
+}
+
 .button-container {
-  display: flex;
-  gap: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
 }
 
 button {
-  align-self: center;
+    font-size: 1.25rem;
+    padding: .25rem;
+    border-radius: 4px;
+    align-self: center;
 }
+
 .feedback.success {
-  color: #000000;
+    color: #000000;
 }
+
 .feedback.error {
-  color: #dc2626;
+    color: #dc2626;
+}
+
+@media (max-width: 767px) {
+
+    h3 {
+        font-size: 1.65rem;
+    }
+
+    p, a {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    input[type="email"] {
+        width: 90%;
+        font-size: 1rem;
+        padding: .25rem;
+        border-radius: 4px;
+    }
+
+    .button-container {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: .25rem;
+        border-radius: 4px;
+        align-self: center;
+    }
 }
 </style>
