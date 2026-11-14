@@ -22,7 +22,7 @@ const eventFormUrl = "https://airtable.com/app9LkiiJl1SaYYnt/pagKc5as9NU85TaHJ/f
             <p id="calendar-subscribe-details">
                 You can subscribe to this Google calendar by <a :href="calendarUrl" target="_blank">clicking here</a>.<br><br>
                 If you would like to add an event to the calendar, please use <a :href="eventFormUrl" target="_blank">this form</a>.<br><br>
-                If you would like to subscribe to the weekly events newsletter, subscribe below.
+                You can subscribe to the weekly events newsletter below.
             </p>
         </div>
         <div id="mailchimp-container" class="calendar-details-item">
