@@ -67,6 +67,7 @@ const subscribe = () => {
                     required
                     :disabled="status === 'loading'"
                 />
+                <input type="hidden" name="tags" value="3624199">
             </div>
 
             <!-- Honeypot field to prevent spam bots -->
