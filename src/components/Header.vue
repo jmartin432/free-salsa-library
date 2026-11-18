@@ -1,4 +1,5 @@
 <script setup>
+import PngLogoComponent from './PngLogoComponent.vue';
 import SvgLogoComponent from './SvgLogoComponent.vue'
 
 </script>
@@ -7,7 +8,8 @@ import SvgLogoComponent from './SvgLogoComponent.vue'
     <header>
         <div class="title-container">
             <div class="title-image-container">
-                <SvgLogoComponent />
+                <!-- <SvgLogoComponent /> -->
+                 <PngLogoComponent />
             </div>
             <div class="title-text-container">
                 <h1>Free Salsa Library</h1>
@@ -26,6 +28,7 @@ import SvgLogoComponent from './SvgLogoComponent.vue'
 
 header {
     display: flex;
+    gap: 1rem;
     max-height: 100vh;
     width: 100%;
     margin-bottom: 1rem;
@@ -34,6 +37,7 @@ header {
 
 .title-container {
     width: 100%;
+    gap: 1rem;
     display: flex;
     align-items: center;
     margin: 0 auto;

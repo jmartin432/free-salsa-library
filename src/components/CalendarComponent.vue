@@ -1,5 +1,5 @@
 <script setup>
-import MailchimpComponent from './MailchimpComponent.vue';
+import SubscribeFormContainer from './SubscribeFormContainer.vue';
 
 const calendarUrl = "https://calendar.google.com/calendar/u/0?cid=Y180YjQ5YjIzYzU3YmE5ZmJmOTIxNmEyMmJjZTM5ZDM2ODdmOTlmMzI5ZmMxYzhlNzQ3ZTFiNWQ1OWY2ZGE4YmY0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20";
 const eventFormUrl = "https://airtable.com/app9LkiiJl1SaYYnt/pagKc5as9NU85TaHJ/form"
@@ -25,8 +25,8 @@ const eventFormUrl = "https://airtable.com/app9LkiiJl1SaYYnt/pagKc5as9NU85TaHJ/f
                 You can subscribe to the weekly events newsletter below.
             </p>
         </div>
-        <div id="mailchimp-container" class="calendar-details-item">
-            <MailchimpComponent />
+        <div id="subscribe-container">
+            <SubscribeFormContainer />
         </div>
     </div>
 </template>
