@@ -163,6 +163,11 @@ const handleSubmit = async () => {
     gap: 1rem;
 }
 
+input {
+    padding: .5rem;
+    border-radius: 4px;
+}
+
 .honeypot {
     position: absolute;
     left: -9999px;
@@ -173,8 +178,25 @@ const handleSubmit = async () => {
 button {
     align-self: flex-start;
     padding: .5rem;
+    background-color: #eeeeee;
+    border: solid 2px #000000;
     border-radius: 4px;
+    box-shadow: 0 0 0 #d175cb00;
+    transition: 
+        box-shadow 0.4s ease-in-out,
+        transform 0.1s ease;
 }
+
+button:hover {
+  box-shadow: 
+    0 0 10px #d175cb,
+    0 0 25px #d175cb;
+}
+
+button:active {
+  transform: translateY(3px);
+}
+
 
 .required {
     color: #b91c1c;
