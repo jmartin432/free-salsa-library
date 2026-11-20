@@ -41,30 +41,9 @@ const eventFormUrl = "https://airtable.com/app9LkiiJl1SaYYnt/pagKc5as9NU85TaHJ/f
     justify-content: center;;
 }
 
-.calendar-details-item {
-    flex: 0 1 45%;
-}
-
 p {
     font-size: 1.25rem;
     line-height: 2rem;
-}
-
-@media (max-width: 767px) {
-
-    h3 {
-        font-size: 1.65rem;
-    }
-
-    #calendar-details-container {
-        flex-direction: column;
-        gap:1rem
-    }
-
-    p, a {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
 }
 
 #calendar-iframe-container {
@@ -82,5 +61,22 @@ p {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+#subscribe-container {
+    flex: 1;
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+
+    h3 {
+        font-size: 1.65rem;
+    }
+
+    p, a {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
 }
 </style>

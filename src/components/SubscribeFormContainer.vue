@@ -107,12 +107,12 @@ const handleSubmit = async () => {
   <form @submit.prevent="handleSubmit" class="contact-form">
 
     <div id="name-inputs">
-        <div>
+        <div class="name-input-container">
             <label for="firstName">First Name</label>
             <input id="firstName" v-model.trim="form.firstName" type="text"/>
         </div>
 
-        <div>
+        <div class="name-input-container">
             <label for="lastName">Last Name</label>
             <input id="lastName" v-model.trim="form.lastName" type="text"/>
         </div>    
@@ -147,6 +147,7 @@ const handleSubmit = async () => {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin: auto;
     width: 100%;
     max-width: 400px
 }
@@ -161,6 +162,14 @@ const handleSubmit = async () => {
     display: flex;
     flex-direction: row;
     gap: 1rem;
+}
+
+#name-inputs > div {
+  flex: 1;
+  min-width: 0; /* Allows each column to shrink below default input width on mobile */
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* Optional: spacing between label and input */
 }
 
 input {
